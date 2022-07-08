@@ -45,7 +45,7 @@ const Login = ({ navigation }) => {
 
   const login = () => {
     axios
-      .post("http://192.168.0.116:4500/user/login", {
+      .post("http://192.168.0.116:5000/user/login", {
         email: email,
         nid: nid,
       })
@@ -138,11 +138,10 @@ const Login = ({ navigation }) => {
         <View>
           <TextInput
             style={styles.input}
-            onChangeText={(newNid) => setPass(newNid)}
+            onChangeText={(newNid) => setNid(newNid)}
             value={nid}
             placeholder="Enter nid"
-            keyboardType="email-address"
-            secureTextEntry={true}
+            keyboardType="default"
           />
         </View>
 

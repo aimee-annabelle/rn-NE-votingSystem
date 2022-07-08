@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 4500;
+const port = 5000;
 const bodyParser = require("body-parser");
 const cors = require('cors')
 const swaggerJSDoc = require('swagger-jsdoc');

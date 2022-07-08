@@ -25,7 +25,7 @@ export default Settings
 
 const styles = StyleSheet.create({
   logout:{
-  backgroundColor:"tomato",
+  backgroundColor:"black",
   padding:25,
   
   },

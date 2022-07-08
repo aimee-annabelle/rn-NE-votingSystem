@@ -11,7 +11,7 @@ const Signup = ({navigation}) => {
     const [phone,setPhone]=useState("");
     const [modalVisible, setModalVisible] = useState(false);
 const register=async()=>{
- await axios.post("http://192.168.0.116:4500/user/register",{
+ await axios.post("http://192.168.0.116:5000/user/register",{
     email:email,
     name:name,
     nid:pass
@@ -82,19 +82,19 @@ navigation.navigate("Login")
   <View>
   <TextInput
         style={styles.input}
-        onChangeText={newPhone=>setEmail(newPhone)}
+        onChangeText={newPhone=>setPhone(newPhone)}
         value={phone}
         placeholder="Enter phone"
-        keyboardType="email-address"
+        keyboardType="default"
       />
   </View>
   <View>
   <TextInput
         style={styles.input}
-        onChangeText={newPass=>setPass(newPass)}
+        onChangeText={newNid=>setNid(newNid)}
         value={nid}
         placeholder="Enter nid"
-        secureTextEntry={true}
+        
       />
   </View>
 

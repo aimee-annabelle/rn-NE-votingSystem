@@ -29,9 +29,6 @@ const MainContainer = () => {
             if(rn===homeName){
                 iconName=focused?'home':'home-outline'
             }
-            else if(rn===detailsName){
-                iconName=focused ? 'list':'list-outline'
-            }
             else if(rn===settingsName){
                 iconName=focused?'settings':'settings-outline'
             }
@@ -54,7 +51,6 @@ const MainContainer = () => {
     >
 
         <Tab.Screen name={homeName} options={{headerShown:false}} component ={Home}/>
-        <Tab.Screen name={detailsName} component ={Details}/>
         <Tab.Screen name={settingsName} component ={Settings}/>
 
 
