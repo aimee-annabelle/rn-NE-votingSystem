@@ -5,11 +5,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Ionicons } from '@expo/vector-icons'
 
 import Home from './Bottom/Home'
-import Details from './Bottom/Details'
 import Settings from './Bottom/Settings'
 
 const homeName='Home'
-const detailsName='Details'
 const settingsName='Settings'
 
 const Tab=createBottomTabNavigator();
@@ -34,16 +32,12 @@ const MainContainer = () => {
             }
             return <Ionicons name={iconName} size={size} color={color}></Ionicons>
         },
-        tabBarActiveTintColor: "#358B9B",
+        tabBarActiveTintColor: "#e29578",
         tabBarInactiveTintColor: "black",
         headerShown: true,
         tabBarStyle: {
           position: "absolute",
-          right: 3,
-          left: 3,
           height: 80,
-          borderTopLeftRadius: 30,
-          borderTopRightRadius: 30,
           ...styles.shadow}
 
     })}
