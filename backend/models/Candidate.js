@@ -2,12 +2,12 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 
 const CandidateSchema = new Schema({
-    names: { type: String, required: true },
+    name: { type: String, required: true },
     nationalId: { type: Number, required: true },
-    gender: { type: String, required: true },
-    missionStat:{type: String, required: true},
-    positionId: [{ type: Schema.Types.ObjectId, ref: 'Positions' }]
+    gender: { type: String, enum: ['male', 'female'], default: "female" },
+    mission: { type: String, required: true },
+    votes: { type: Number, required: true, default: 0 }
 })
 
 const Candidate = mongoose.model("Candidates", CandidateSchema);
-module.exports = Candidate;
+module.exports = Candidate

@@ -11,7 +11,7 @@ const Signup = ({navigation}) => {
     const [phone,setPhone]=useState("");
     const [modalVisible, setModalVisible] = useState(false);
 const register=async()=>{
- await axios.post("http://192.168.0.116:4300/user/register",{
+ await axios.post("http://192.168.0.116:4500/user/register",{
     email:email,
     name:name,
     nid:pass

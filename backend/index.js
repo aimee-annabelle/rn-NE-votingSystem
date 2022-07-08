@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 4300;
+const port = 4500;
 const bodyParser = require("body-parser");
 const cors = require('cors')
 const swaggerJSDoc = require('swagger-jsdoc');
@@ -11,6 +11,7 @@ require("./db/db");
 const user = require("./routes/UserRoutes");
 const candidate = require("./routes/CandidateRoutes");
 const position = require("./routes/PositionsRoutes");
+const voter = require("./routes/VoterRoutes");
 
 //swagger setup
 const swaggerDefinition = {
@@ -36,7 +37,7 @@ const swaggerDefinition = {
 
 const options = {
     swaggerDefinition,
-    apis: ['./cotrollers/*.js'],
+    apis: ['./routes/*.js'],
 };
 
 const swaggerSpec = swaggerJSDoc(options);
@@ -46,13 +47,14 @@ const swaggerSpec = swaggerJSDoc(options);
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 
 //routing
 app.use("/user", user)
 app.use("/candidate", candidate);
 app.use("/position", position);
+app.use("/voter", voter)
 
 
 app.listen(port, () => {
