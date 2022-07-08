@@ -35,7 +35,7 @@ const Landing = ({ navigation }) => {
         </View>
 
         <View>
-          <Text style={[styles.logo, {fontSize:30}]}>
+          <Text style={[styles.logo, {fontSize:40}]}>
             e-Vote
           </Text>
           <Text

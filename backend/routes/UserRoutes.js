@@ -58,7 +58,7 @@ const bcrypt = require("bcryptjs");
  * 
  *                     nid:
  *                      type: string
- *                      description: The user's age.
+ *                      description: The user's nid.
  *                      example: nid
  */
 
@@ -137,7 +137,7 @@ router.post("/register", (req, res) => {
  * 
  *                     nid:
  *                      type: string
- *                      description: The user's age.
+ *                      description: The user's nid.
  *                      example: nid
  */
 
