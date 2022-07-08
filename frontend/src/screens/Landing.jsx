@@ -21,18 +21,8 @@ const Landing = ({ navigation }) => {
         translucent={true}
       />
 
-      <View>
-        <Image
-          source={require("../images/shape.png")}
-          style={{ width: 270, margin: 0 }}
-          resizeMode="cover"
-        ></Image>
-      </View>
 
       <View style={{ marginTop: 20 }}>
-        <View style={{ alignItems: "center", marginTop: 100 }}>
-          <Image source={require("../images/mobile.png")}></Image>
-        </View>
 
         <View>
           <Text style={[styles.logo, {fontSize:40}]}>
