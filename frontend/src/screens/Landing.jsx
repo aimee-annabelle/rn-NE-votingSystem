@@ -28,7 +28,7 @@ const Landing = ({navigation}) => {
 
       <TouchableOpacity onPress={()=>navigation.navigate("Login")} style={{backgroundColor:"#e29578",padding:15,alignItems:"center",marginTop:40
       ,marginLeft:40,marginRight:40,borderRadius:4}}>
-        <Text style={{color:"white"}}>Get started</Text>
+        <Text style={{color:"white"}}>continue to Login</Text>
       </TouchableOpacity>
      </View>
         </View> 

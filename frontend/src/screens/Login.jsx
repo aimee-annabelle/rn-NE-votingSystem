@@ -115,7 +115,7 @@ const Login = ({ navigation }) => {
           marginTop: 50,
         }}
       >
-        Welcome {"\n"} login to your account
+        Welcome {"\n\n"} login to your account
       </Text>
       <View style={{ alignItems: "center", marginTop: 15 }}>
         <Image
@@ -196,9 +196,7 @@ const styles = StyleSheet.create({
     marginRight: 40,
 
     padding: 10,
-    paddingLeft: 20,
-    paddingRight: 20,
-    borderRadius: 100,
+    borderRadius: 10,
     backgroundColor: "white",
   },
   container:{

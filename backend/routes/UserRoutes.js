@@ -27,10 +27,10 @@ const bcrypt = require("bcryptjs");
  *                  type: string
  *                  description: The user's email.
  *                  example: example@gmail.com
- *               password:
+ *               nid:
  *                  type: string
- *                  description: User password.
- *                  example: password
+ *                  description: User nid.
+ *                  example: nid
  * 
  *     responses:
  *       201:
@@ -56,10 +56,10 @@ const bcrypt = require("bcryptjs");
  *                       description: The user's email.
  *                       example: example@gmail.com
  * 
- *                     password:
+ *                     nid:
  *                      type: string
  *                      description: The user's age.
- *                      example: password
+ *                      example: nid
  */
 
 
@@ -77,7 +77,7 @@ router.post("/register", (req, res) => {
                     name: req.body.name,
                     email: req.body.email,
                     phone:req.body.phone,
-                    nid:req.body.nid,
+                    nid: nid
                 })
 
                 newUser.save()
@@ -110,10 +110,10 @@ router.post("/register", (req, res) => {
  *                  type: string
  *                  description: The user's email.
  *                  example: example@gmail.com
- *               password:
+ *               nid:
  *                  type: string
- *                  description: User password.
- *                  example: password
+ *                  description: User nid.
+ *                  example: nid
  * 
  *     responses:
  *       200:
@@ -135,10 +135,10 @@ router.post("/register", (req, res) => {
  *                       description: The user's email.
  *                       example: example@gmail.com
  * 
- *                     password:
+ *                     nid:
  *                      type: string
  *                      description: The user's age.
- *                      example: password
+ *                      example: nid
  */
 
 router.post("/login", (req, res) => {
@@ -149,7 +149,7 @@ router.post("/login", (req, res) => {
             if (Object.keys(result).length === 0) {
                 res.status(404).json({ error: "User not found" });
             } else {
-                if (bcrypt.compare(pass, result[0].nid)) {
+                if (bcrypt.compare(nid, result[0].nid)) {
                     const user = result[0];
                     const token = jwt.sign({ name: user.name, email: user.email },
                         "trial", { expiresIn: "6h" });

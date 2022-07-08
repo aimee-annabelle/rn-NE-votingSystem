@@ -6,14 +6,15 @@ import axios from 'axios';
 const Signup = ({navigation}) => {
 
     const [email,setEmail]=useState("");
-    const [pass,setPass]=useState("");
+    const [nid,setNid]=useState("");
     const [name,setName]=useState("");
+    const [phone,setPhone]=useState("");
     const [modalVisible, setModalVisible] = useState(false);
 const register=async()=>{
  await axios.post("http://192.168.0.116:4300/user/register",{
     email:email,
     name:name,
-    password:pass
+    nid:pass
   })
   .then(res=>{
 
@@ -26,7 +27,7 @@ navigation.navigate("Login")
   })
 }
   return (
-    <View>
+    <View style={styles.container}>
       <Modal
      
      animationType="fade"
@@ -51,9 +52,9 @@ navigation.navigate("Login")
 
 </Image>
       </View>
-      <Text style={{fontWeight:"bold",fontSize:15, textAlign:"center",marginTop:50}}>Welcome to Board</Text>
+      <Text style={{fontWeight:"bold",fontSize:15, textAlign:"center",marginTop:50}}>Welcome</Text>
       <Text style={{marginTop:15,marginLeft:40,marginRight:40,textAlign:"center"}}>
-      Signup to continue
+      create new Account here
       </Text>
       
 
@@ -65,7 +66,7 @@ navigation.navigate("Login")
         style={styles.input}
          onChangeText={newName=>{setName(newName); }}
          value={name}
-        placeholder="Enter name"
+        placeholder="Enter names"
         keyboardType="default"
       />
   </View>
@@ -81,9 +82,18 @@ navigation.navigate("Login")
   <View>
   <TextInput
         style={styles.input}
+        onChangeText={newPhone=>setEmail(newPhone)}
+        value={phone}
+        placeholder="Enter phone"
+        keyboardType="email-address"
+      />
+  </View>
+  <View>
+  <TextInput
+        style={styles.input}
         onChangeText={newPass=>setPass(newPass)}
-        value={pass}
-        placeholder="Enter password"
+        value={nid}
+        placeholder="Enter nid"
         secureTextEntry={true}
       />
   </View>
@@ -93,7 +103,7 @@ navigation.navigate("Login")
 </View>
 
 
-<TouchableOpacity onPress={()=>register()} style={{backgroundColor:"#358B9B",padding:15,alignItems:"center"
+<TouchableOpacity onPress={()=>register()} style={{backgroundColor:"#e29578",padding:15,alignItems:"center"
      ,marginTop:40 ,marginLeft:40,marginRight:40,borderRadius:4}}>
         <Text style={{color:"white"}}>Register</Text>
       </TouchableOpacity>
@@ -102,7 +112,7 @@ navigation.navigate("Login")
   <View style={{flexDirection:"row"}}>
   <Text>Have an account ?</Text>
   <TouchableOpacity onPress={()=>navigation.navigate("Login")}>
-<Text style={{color:"#358B9B",marginLeft:5}}>Login</Text>
+<Text style={{color:"#e29578",marginLeft:5}}>Login</Text>
 </TouchableOpacity>
   </View>
 
@@ -128,7 +138,11 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingLeft:20,
     paddingRight:20,
-    borderRadius:100,
+    borderRadius:10,
     backgroundColor:"white"
   },
+  container:{
+    justifyContent: "center",
+    top:'10%'
+  }
 })
